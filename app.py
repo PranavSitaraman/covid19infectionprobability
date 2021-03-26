@@ -89,7 +89,7 @@ def mortality(gender, age, race, state):
     stateprob = 15.5
   else:
     stateprob = 20.5
-  return str(round((raceprob * genderprob * stateprob * ageprob)**0.25))
+  return (str(round(((raceprob * genderprob * stateprob * ageprob)**0.25)*100)/100) + "%")
 @app.route('/<infectedday>/<contactlast>/<numclass>/<sizeclass>/<numinfect>')
 def home(infectedday, contactlast, numclass, sizeclass, numinfect):
   dayinfected = int(infectedday)
